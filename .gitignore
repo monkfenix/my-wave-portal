@@ -138,3 +138,5 @@ typechain-types
 cache
 artifacts
 
+#Hardhat config
+hardhat.config.js
