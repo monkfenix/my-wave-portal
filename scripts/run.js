@@ -27,6 +27,10 @@ const main = async () => {
     waveTxn = await waveContract.connect(randomPerson).wave("Another message!");
     await waveTxn.wait();
 
+    //This should fail because 15 min interval wasn't reached
+    waveTxn = await waveContract.connect(randomPerson).wave("A 2nd message in less than 15 mins!");
+    await waveTxn.wait();
+
     let allWaves = await waveContract.getAllWaves();
     console.log(allWaves);
 };
